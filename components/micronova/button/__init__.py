@@ -109,3 +109,42 @@ async def to_code(config):
         cg.add(bt.set_memory_address(custom_button_config.get(CONF_MEMORY_ADDRESS)))
         cg.add(bt.set_memory_data(custom_button_config[CONF_MEMORY_DATA]))
         cg.add(bt.set_function(MicroNovaFunctions.STOVE_FUNCTION_CUSTOM))
+
+ if custom_button_config1 := config.get(CONF_CUSTOM_BUTTON1):
+        bt = await button.new_button(custom_button_config1, mv)
+        cg.add(bt.set_memory_location(custom_button_config1.get(CONF_MEMORY_LOCATION)))
+        cg.add(bt.set_memory_address(custom_button_config1.get(CONF_MEMORY_ADDRESS)))
+        cg.add(bt.set_memory_data(custom_button_config1[CONF_MEMORY_DATA]))
+        cg.add(bt.set_function(MicroNovaFunctions.STOVE_FUNCTION_CUSTOM))
+
+ if custom_button_config2 := config.get(CONF_CUSTOM_BUTTON2):
+        bt = await button.new_button(custom_button_config2, mv)
+        cg.add(bt.set_memory_location(custom_button_config2.get(CONF_MEMORY_LOCATION)))
+        cg.add(bt.set_memory_address(custom_button_config2.get(CONF_MEMORY_ADDRESS)))
+        cg.add(bt.set_memory_data(custom_button_config2[CONF_MEMORY_DATA]))
+        cg.add(bt.set_function(MicroNovaFunctions.STOVE_FUNCTION_CUSTOM))
+
+ if custom_button_config3 := config.get(CONF_CUSTOM_BUTTON3):
+        bt = await button.new_button(custom_button_config3, mv)
+        cg.add(bt.set_memory_location(custom_button_config3.get(CONF_MEMORY_LOCATION)))
+        cg.add(bt.set_memory_address(custom_button_config3.get(CONF_MEMORY_ADDRESS)))
+        cg.add(bt.set_memory_data(custom_button_config3[CONF_MEMORY_DATA]))
+        cg.add(bt.set_function(MicroNovaFunctions.STOVE_FUNCTION_CUSTOM))
+
+ if custom_button_config4 := config.get(CONF_CUSTOM_BUTTON4):
+        bt = await button.new_button(custom_button_config4, mv)
+        cg.add(bt.set_memory_location(custom_button_config.4get(CONF_MEMORY_LOCATION)))
+        cg.add(bt.set_memory_address(custom_button_config4.get(CONF_MEMORY_ADDRESS)))
+        cg.add(bt.set_memory_data(custom_button_config4[CONF_MEMORY_DATA]))
+        cg.add(bt.set_function(MicroNovaFunctions.STOVE_FUNCTION_CUSTOM))
+
+ if custom_button_config5 := config.get(CONF_CUSTOM_BUTTON5):
+        bt = await button.new_button(custom_button_config5, mv)
+        cg.add(bt.set_memory_location(custom_button_config5.get(CONF_MEMORY_LOCATION)))
+        cg.add(bt.set_memory_address(custom_button_config5.get(CONF_MEMORY_ADDRESS)))
+        cg.add(bt.set_memory_data(custom_button_config5[CONF_MEMORY_DATA]))
+        cg.add(bt.set_function(MicroNovaFunctions.STOVE_FUNCTION_CUSTOM))
+
+
+
+
