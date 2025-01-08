@@ -22,6 +22,13 @@ MicroNovaButton5 = micronova_ns.class_("MicroNovaButton5", button.Button, cg.Com
 
 
 CONF_CUSTOM_BUTTON = "custom_button"
+
+CONF_CUSTOM_BUTTON1 = "1_button"
+CONF_CUSTOM_BUTTON2 = "2_button"
+CONF_CUSTOM_BUTTON3 = "3_button"
+CONF_CUSTOM_BUTTON4 = "4_button"
+CONF_CUSTOM_BUTTON5 = "5_button"
+
 CONF_MEMORY_DATA = "memory_data"
 
 CONFIG_SCHEMA = cv.Schema(
@@ -29,6 +36,59 @@ CONFIG_SCHEMA = cv.Schema(
         cv.GenerateID(CONF_MICRONOVA_ID): cv.use_id(MicroNova),
         cv.Optional(CONF_CUSTOM_BUTTON): button.button_schema(
             MicroNovaButton,
+        )
+        .extend(
+            MICRONOVA_LISTENER_SCHEMA(
+                default_memory_location=0xA0, default_memory_address=0x7D
+            )
+        )
+        .extend({cv.Required(CONF_MEMORY_DATA): cv.hex_int_range()}),
+
+        
+        cv.Optional(CONF_CUSTOM_BUTTON1): button.button_schema(
+            MicroNovaButton1,
+        )
+        .extend(
+            MICRONOVA_LISTENER_SCHEMA(
+                default_memory_location=0xA0, default_memory_address=0x7D
+            )
+        )
+        .extend({cv.Required(CONF_MEMORY_DATA): cv.hex_int_range()}),
+
+
+
+        cv.Optional(CONF_CUSTOM_BUTTON2): button.button_schema(
+            MicroNovaButton2,
+        )
+        .extend(
+            MICRONOVA_LISTENER_SCHEMA(
+                default_memory_location=0xA0, default_memory_address=0x7D
+            )
+        )
+        .extend({cv.Required(CONF_MEMORY_DATA): cv.hex_int_range()}),
+
+        cv.Optional(CONF_CUSTOM_BUTTON3): button.button_schema(
+            MicroNovaButton3,
+        )
+        .extend(
+            MICRONOVA_LISTENER_SCHEMA(
+                default_memory_location=0xA0, default_memory_address=0x7D
+            )
+        )
+        .extend({cv.Required(CONF_MEMORY_DATA): cv.hex_int_range()}),
+
+        cv.Optional(CONF_CUSTOM_BUTTON4): button.button_schema(
+            MicroNovaButton4,
+        )
+        .extend(
+            MICRONOVA_LISTENER_SCHEMA(
+                default_memory_location=0xA0, default_memory_address=0x7D
+            )
+        )
+        .extend({cv.Required(CONF_MEMORY_DATA): cv.hex_int_range()}),
+
+        cv.Optional(CONF_CUSTOM_BUTTON5): button.button_schema(
+            MicroNovaButton5,
         )
         .extend(
             MICRONOVA_LISTENER_SCHEMA(
