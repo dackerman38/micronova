@@ -46,7 +46,7 @@ CONFIG_SCHEMA = cv.Schema(
 
         
         cv.Optional(CONF_CUSTOM_BUTTON1): button.button_schema(
-            MicroNovaButton1,
+            MicroNovaButton1, icon=numeric-1
         )
         .extend(
             MICRONOVA_LISTENER_SCHEMA(
@@ -58,7 +58,7 @@ CONFIG_SCHEMA = cv.Schema(
 
 
         cv.Optional(CONF_CUSTOM_BUTTON2): button.button_schema(
-            MicroNovaButton2,
+            MicroNovaButton2, icon=numeric-2
         )
         .extend(
             MICRONOVA_LISTENER_SCHEMA(
@@ -68,7 +68,7 @@ CONFIG_SCHEMA = cv.Schema(
         .extend({cv.Required(CONF_MEMORY_DATA): cv.hex_int_range()}),
 
         cv.Optional(CONF_CUSTOM_BUTTON3): button.button_schema(
-            MicroNovaButton3,
+            MicroNovaButton3, icon=numeric-3
         )
         .extend(
             MICRONOVA_LISTENER_SCHEMA(
@@ -78,7 +78,7 @@ CONFIG_SCHEMA = cv.Schema(
         .extend({cv.Required(CONF_MEMORY_DATA): cv.hex_int_range()}),
 
         cv.Optional(CONF_CUSTOM_BUTTON4): button.button_schema(
-            MicroNovaButton4,
+            MicroNovaButton4, icon=numeric-4
         )
         .extend(
             MICRONOVA_LISTENER_SCHEMA(
@@ -88,7 +88,7 @@ CONFIG_SCHEMA = cv.Schema(
         .extend({cv.Required(CONF_MEMORY_DATA): cv.hex_int_range()}),
 
         cv.Optional(CONF_CUSTOM_BUTTON5): button.button_schema(
-            MicroNovaButton5,
+            MicroNovaButton5, icon=numeric-5
         )
         .extend(
             MICRONOVA_LISTENER_SCHEMA(
