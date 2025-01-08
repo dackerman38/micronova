@@ -43,8 +43,11 @@ CONFIG_SCHEMA = cv.Schema(
             )
         )
         .extend({cv.Required(CONF_MEMORY_DATA): cv.hex_int_range()}),
+ }
+
 
         
+        cv.GenerateID(CONF_MICRONOVA_ID): cv.use_id(MicroNova),
         cv.Optional(CONF_CUSTOM_BUTTON1): button.button_schema(
             MicroNovaButton1, icon=numeric-1
         )
@@ -56,7 +59,11 @@ CONFIG_SCHEMA = cv.Schema(
         .extend({cv.Required(CONF_MEMORY_DATA): cv.hex_int_range()}),
 
 
+}
 
+
+        
+        cv.GenerateID(CONF_MICRONOVA_ID): cv.use_id(MicroNova),
         cv.Optional(CONF_CUSTOM_BUTTON2): button.button_schema(
             MicroNovaButton2, icon=numeric-2
         )
