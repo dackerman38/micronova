@@ -14,6 +14,13 @@ from .. import (
 
 MicroNovaButton = micronova_ns.class_("MicroNovaButton", button.Button, cg.Component)
 
+MicroNovaButton1 = micronova_ns.class_("MicroNovaButton1", button.Button, cg.Component)
+MicroNovaButton2 = micronova_ns.class_("MicroNovaButton2", button.Button, cg.Component)
+MicroNovaButton3 = micronova_ns.class_("MicroNovaButton3", button.Button, cg.Component)
+MicroNovaButton4 = micronova_ns.class_("MicroNovaButton4", button.Button, cg.Component)
+MicroNovaButton5 = micronova_ns.class_("MicroNovaButton5", button.Button, cg.Component)
+
+
 CONF_CUSTOM_BUTTON = "custom_button"
 CONF_MEMORY_DATA = "memory_data"
 
