@@ -26,7 +26,9 @@ CONF_FAN_LEVEL = "fan_level"
 
 CONF_MEMORY_WRITE_LOCATION = "memory_write_location"
 
-MicroNovaNumber = micronova_ns.class_("MicroNovaNumber", number.Number, cg.Component)
+MicroNovaNumber = micronova_ns.class_(
+    "MicroNovaNumber", number.Number, cg.Component
+)
 
 CONFIG_SCHEMA = cv.Schema(
     {
@@ -46,11 +48,11 @@ CONFIG_SCHEMA = cv.Schema(
                 cv.Optional(
                     CONF_MEMORY_WRITE_LOCATION, default=0xA0
                 ): cv.hex_int_range(),
-                cv.Optional(CONF_STEP, default=1.0): cv.float_range(min=0.1, max=10.0),
+                cv.Optional(CONF_STEP, default=1.0): cv.float_range(
+                    min=0.1, max=10.0
+                ),
             }
         ),
-
-        
         cv.Optional(CONF_POWER_LEVEL): number.number_schema(
             MicroNovaNumber,
             icon=ICON_FLASH,
@@ -62,12 +64,13 @@ CONFIG_SCHEMA = cv.Schema(
         )
         .extend(
             {
-                cv.Optional(CONF_MEMORY_WRITE_LOCATION, default=0xA0): cv.hex_int_range(),
+                cv.Optional(
+                    CONF_MEMORY_WRITE_LOCATION, default=0xA0
+                ): cv.hex_int_range(),
                 cv.Optional(CONF_MAX_VALUE, default=5): cv.int_range(min=1),
             }
         ),
-
-         cv.Optional(CONF_FAN_LEVEL): number.number_schema(
+        cv.Optional(CONF_FAN_LEVEL): number.number_schema(
             MicroNovaNumber,
             icon=ICON_FLASH,
         )
@@ -78,7 +81,9 @@ CONFIG_SCHEMA = cv.Schema(
         )
         .extend(
             {
-                cv.Optional(CONF_MEMORY_WRITE_LOCATION, default=0xA0): cv.hex_int_range(),
+                cv.Optional(
+                    CONF_MEMORY_WRITE_LOCATION, default=0xA0
+                ): cv.hex_int_range(),
                 cv.Optional(CONF_MAX_VALUE, default=5): cv.int_range(min=1),
             }
         ),
@@ -89,7 +94,9 @@ CONFIG_SCHEMA = cv.Schema(
 async def to_code(config):
     mv = await cg.get_variable(config[CONF_MICRONOVA_ID])
 
-    if thermostat_temperature_config := config.get(CONF_THERMOSTAT_TEMPERATURE):
+    if thermostat_temperature_config := config.get(
+        CONF_THERMOSTAT_TEMPERATURE
+    ):
         numb = await number.new_number(
             thermostat_temperature_config,
             min_value=17,
@@ -104,7 +111,9 @@ async def to_code(config):
             )
         )
         cg.add(
-            numb.set_memory_address(thermostat_temperature_config[CONF_MEMORY_ADDRESS])
+            numb.set_memory_address(
+                thermostat_temperature_config[CONF_MEMORY_ADDRESS]
+            )
         )
         cg.add(
             numb.set_memory_write_location(
@@ -112,7 +121,9 @@ async def to_code(config):
             )
         )
         cg.add(
-            numb.set_function(MicroNovaFunctions.STOVE_FUNCTION_THERMOSTAT_TEMPERATURE)
+            numb.set_function(
+                MicroNovaFunctions.STOVE_FUNCTION_THERMOSTAT_TEMPERATURE
+            )
         )
 
     if power_level_config := config.get(CONF_POWER_LEVEL):
@@ -124,24 +135,21 @@ async def to_code(config):
         )
         cg.add(numb.set_micronova_object(mv))
         cg.add(mv.register_micronova_listener(numb))
-        cg.add(numb.set_memory_location(power_level_config[CONF_MEMORY_LOCATION]))
-        cg.add(numb.set_memory_address(power_level_config[CONF_MEMORY_ADDRESS]))
+        cg.add(
+            numb.set_memory_location(power_level_config[CONF_MEMORY_LOCATION])
+        )
+        cg.add(
+            numb.set_memory_address(power_level_config[CONF_MEMORY_ADDRESS])
+        )
         cg.add(
             numb.set_memory_write_location(
                 power_level_config.get(CONF_MEMORY_WRITE_LOCATION)
             )
         )
-        cg.add(numb.set_function(MicroNovaFunctions.STOVE_FUNCTION_POWER_LEVEL)
-
-
-
-
-
-
-
-
-
-         if power_fan_config := config.get(CONF_FAN_LEVEL):
+        cg.add(
+            numb.set_function(MicroNovaFunctions.STOVE_FUNCTION_POWER_LEVEL)
+        )
+    if power_fan_config := config.get(CONF_FAN_LEVEL):
         numb = await number.new_number(
             power_fan_config,
             min_value=1,
@@ -150,7 +158,9 @@ async def to_code(config):
         )
         cg.add(numb.set_micronova_object(mv))
         cg.add(mv.register_micronova_listener(numb))
-        cg.add(numb.set_memory_location(power_fan_config[CONF_MEMORY_LOCATION]))
+        cg.add(
+            numb.set_memory_location(power_fan_config[CONF_MEMORY_LOCATION])
+        )
         cg.add(numb.set_memory_address(power_fan_config[CONF_MEMORY_ADDRESS]))
         cg.add(
             numb.set_memory_write_location(
