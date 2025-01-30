@@ -131,7 +131,9 @@ async def to_code(config):
                 power_level_config.get(CONF_MEMORY_WRITE_LOCATION)
             )
         )
-        cg.add(numb.set_function(MicroNovaFunctions.STOVE_FUNCTION_POWER_LEVEL))
+        cg.add(numb.set_function(MicroNovaFunctions.STOVE_FUNCTION_POWER_LEVEL)
+
+)
 
 
 
@@ -139,7 +141,7 @@ async def to_code(config):
 
 
 
-if power_fan_config := config.get(CONF_FAN_LEVEL):
+         if power_fan_config := config.get(CONF_FAN_LEVEL):
         numb = await number.new_number(
             power_fan_config,
             min_value=1,
