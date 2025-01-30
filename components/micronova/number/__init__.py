@@ -133,7 +133,7 @@ async def to_code(config):
         )
         cg.add(numb.set_function(MicroNovaFunctions.STOVE_FUNCTION_POWER_LEVEL)
 
-)
+
 
 
 
