@@ -1,26 +1,14 @@
 # ESPhome component for Micronova board based pellet stoves. 
 
+This repo is a modified version with addresses compatible with my Palazzetti violetta stove.
 The Micronova component is now part of ESPHome. This repo is still valid and is the first place where new features and bugfixes show up.
 Full ESPHome documentation: https://esphome.io/components/micronova
 
 You have to build a simple circuit to interface with your stove see ESPHome documentation for the details. You can also order a board from 
 [@philibertc](https://github.com/philibertc), that should make it dead easy.
 
-## Example configuration
 
-The hardest part is to configure the correct IO pins for the UART and the enable_rx. 
-Users have reported that when you got the interface board from [@philibertc](https://github.com/philibertc), then the pin-config below should work:
 
-```yaml
-uart:
-  tx_pin: D4
-  rx_pin: D3
-  baud_rate: 1200
-  stop_bits: 2
-
-micronova:
-  enable_rx_pin: D2
-  serial_reply_delay: 100ms
 ```
 
 A generic example below. All buttons, sensors, text_sensors, switch and numbers accept a memory_location and memory_address. Specify those if the defaults don't work for you.

@@ -18,6 +18,9 @@ void MicroNovaNumber::process_value_from_stove(int value_from_stove) {
     case MicroNovaFunctions::STOVE_FUNCTION_POWER_LEVEL:
       new_sensor_value = (float) value_from_stove;
       break;
+     case MicroNovaFunctions::STOVE_FUNCTION_FAN_LEVEL:
+      new_sensor_value = (float) value_from_stove;
+      break;
     default:
       break;
   }
@@ -32,6 +35,9 @@ void MicroNovaNumber::control(float value) {
       new_number = (uint8_t) (value / this->traits.get_step());
       break;
     case MicroNovaFunctions::STOVE_FUNCTION_POWER_LEVEL:
+      new_number = (uint8_t) value;
+      break;
+    case MicroNovaFunctions::STOVE_FUNCTION_FAN_LEVEL:
       new_number = (uint8_t) value;
       break;
     default:

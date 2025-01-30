@@ -54,7 +54,7 @@ CONFIG_SCHEMA = cv.Schema(
             accuracy_decimals=1,
         ).extend(
             MICRONOVA_LISTENER_SCHEMA(
-                default_memory_location=0x00, default_memory_address=0x5A
+                default_memory_location=0x00, default_memory_address=0x3E
             )
         ),
         cv.Optional(CONF_STOVE_POWER): sensor.sensor_schema(
