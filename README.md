@@ -15,7 +15,7 @@ A generic example below. All buttons, sensors, text_sensors, switch and numbers 
 
 ```yaml
 uart:
-  tx_pin: 5
+  tx_pin: D2
   rx_pin: 4
   baud_rate: 1200
   stop_bits: 2
