@@ -30,13 +30,13 @@ CONFIG_SCHEMA = cv.Schema(
         )
         .extend(
             MICRONOVA_LISTENER_SCHEMA(
-                default_memory_location=0x80, default_memory_address=0x58
+                default_memory_location=0x80
             )
         )
         .extend(
             {
-                cv.Optional(CONF_MEMORY_DATA_OFF, default=0x00): cv.hex_int_range(),
-                cv.Optional(CONF_MEMORY_DATA_ON, default=0x5A): cv.hex_int_range(),
+                cv.Optional(CONF_MEMORY_DATA_OFF, default=0x2100): cv.hex_int_range(),
+                cv.Optional(CONF_MEMORY_DATA_ON, default=0x585A): cv.hex_int_range(),
             }
         ),
     }
