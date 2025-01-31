@@ -107,6 +107,7 @@ class MicroNovaSwitchListener : public MicroNovaBaseListener {
  protected:
   uint8_t memory_data_on_ = 0;
   uint8_t memory_data_off_ = 0;
+  uint8_t memory_add_off_ = 0;
 };
 
 class MicroNovaButtonListener : public MicroNovaBaseListener {
