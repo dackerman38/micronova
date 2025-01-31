@@ -10,7 +10,6 @@ from .. import (
     MicroNovaFunctions,
     CONF_MICRONOVA_ID,
     CONF_MEMORY_LOCATION,
-    CONF_MEMORY_ADDRESS,
     MICRONOVA_LISTENER_SCHEMA,
     micronova_ns,
 )
