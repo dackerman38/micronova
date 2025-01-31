@@ -18,7 +18,7 @@ from .. import (
 CONF_STOVE = "stove"
 CONF_MEMORY_DATA_ON = "memory_data_on"
 CONF_MEMORY_DATA_OFF = "memory_data_off"
-CONF_MEMORY_ADD_OFF = "memory_data_off"
+CONF_MEMORY_ADD_OFF = "memory_add_off"
 
 
 
@@ -39,6 +39,8 @@ CONFIG_SCHEMA = cv.Schema(
         )
         .extend(
             {
+                cv.Optional(CONF_MEMORY_ADD_OFF, default=0x21): cv.hex_int_range(),
+
                 cv.Optional(CONF_MEMORY_DATA_OFF, default=0x00): cv.hex_int_range(),
                 cv.Optional(CONF_MEMORY_DATA_ON, default=0x5A): cv.hex_int_range(),
 
