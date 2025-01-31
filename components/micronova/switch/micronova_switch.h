@@ -21,6 +21,11 @@ class MicroNovaSwitch : public Component, public switch_::Switch, public MicroNo
   void set_memory_data_off(uint8_t f) { this->memory_data_off_ = f; }
   uint8_t get_memory_data_off() { return this->memory_data_off_; }
 
+  void set_memory_add_off(uint8_t f) { this->memory_add_off_ = f; }
+  uint8_t get_memory_add_off() { return this->memory_add_off_; }
+
+
+
 
 
  protected:
