@@ -18,7 +18,7 @@ from .. import (
 CONF_STOVE = "stove"
 CONF_MEMORY_DATA_ON = "memory_data_on"
 CONF_MEMORY_DATA_OFF = "memory_data_off"
-CONF_MEMORY_ADD_OFF = 0x21
+CONF_MEMORY_ADD_OFF = "memory_data_off"
 
 
 
