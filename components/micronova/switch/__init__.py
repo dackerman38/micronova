@@ -34,7 +34,7 @@ CONFIG_SCHEMA = cv.Schema(
         )
         .extend(
             MICRONOVA_LISTENER_SCHEMA(
-                default_memory_location=0x80, default_memory_address=0x58
+                default_memory_location=0x80
             )
         )
         .extend(
@@ -57,9 +57,9 @@ async def to_code(config):
         sw = await switch.new_switch(stove_config, mv)
         cg.add(mv.set_stove(sw))
         cg.add(sw.set_memory_location(stove_config[CONF_MEMORY_LOCATION]))
-        cg.add(sw.set_memory_address(stove_config[CONF_MEMORY_ADDRESS]))
-         cg.add(sw.set_memory_add_on(stove_config[CONF_MEMORY_ADD_ON]))
-         cg.add(sw.set_memory_add_off(stove_config[CONF_MEMORY_ADD_OFF]))
+        
+        cg.add(sw.set_memory_add_on(stove_config[CONF_MEMORY_ADD_ON]))
+        cg.add(sw.set_memory_add_off(stove_config[CONF_MEMORY_ADD_OFF]))
         cg.add(sw.set_memory_data_on(stove_config[CONF_MEMORY_DATA_ON]))
         cg.add(sw.set_memory_data_off(stove_config[CONF_MEMORY_DATA_OFF]))
         cg.add(sw.set_function(MicroNovaFunctions.STOVE_FUNCTION_SWITCH))
